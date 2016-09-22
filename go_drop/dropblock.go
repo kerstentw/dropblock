@@ -12,6 +12,10 @@ type DocumentStorage struct {
 
 
 func main(){
+ err := shim.Start(new(DocumentStorage))
+        if err != nil {
+                fmt.Printf("Error starting Simple chaincode: %s", err)
+        }
 
 }
 
