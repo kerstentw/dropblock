@@ -34,7 +34,7 @@ func (t *DocumentStorage) Init(stub *shim.ChaincodeShim, function string, args [
 func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 
         // Handle different functions
-        } if function == "write" {
+        if function == "write" {
                 return t.write_to_document(stub, args)
         }
         fmt.Println("invoke did not find func: " + function)
