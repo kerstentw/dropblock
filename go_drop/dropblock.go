@@ -31,7 +31,7 @@ func (t *DocumentStorage) Init(stub *shim.ChaincodeShim, function string, args [
 }
 
 
-func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
+func (t *DocumentStorage) Invoke(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 
         // Handle different functions
         if function == "write" {
@@ -43,7 +43,7 @@ func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args
 }
 
 
-func (t *SimpleChaincode) Query(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
+func (t *DocumentStorage) Query(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
 
         // Handle different functions
         if function == "read" { //read a variable
@@ -54,7 +54,7 @@ func (t *SimpleChaincode) Query(stub *shim.ChaincodeStub, function string, args 
         return nil, errors.New("Received unknown function query")
 }
 
-func (t *SimpleChaincode) write_to_document(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
+func (t *DocumentStorage) write_to_document(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
         var key, value string
         var err error
         fmt.Println("running write()")
@@ -73,7 +73,7 @@ func (t *SimpleChaincode) write_to_document(stub *shim.ChaincodeStub, args []str
 }
 
 
-func (t *SimpleChaincode) read_document(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
+func (t *DocumentStorage) read_document(stub *shim.ChaincodeStub, args []string) ([]byte, error) {
         var key, jsonResp string
         var err error
 
