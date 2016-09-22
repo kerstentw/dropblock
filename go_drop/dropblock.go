@@ -15,7 +15,7 @@ func main(){
 
 }
 
-func (t *DocumentStorage) Init(stub *shim.ChaincodeShim, function string, args []string) ([]byte, error){
+func (t *DocumentStorage) Init(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error){
 
         if len(args) != 1 {
                 return nil, errors.New("Incorrect number of arguments. Expecting 1")
